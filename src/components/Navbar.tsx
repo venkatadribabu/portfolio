@@ -1,54 +1,50 @@
+"use client";
+
+import Link from "next/link";
+
+const navItems = [
+  { name: "About", href: "#about" },
+  { name: "What I Do", href: "#what-i-do" },
+  { name: "Experience", href: "#experience" },
+  { name: "Projects", href: "#projects" },
+  { name: "Certifications", href: "#certifications" },
+  { name: "Contact", href: "#contact" },
+];
+
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-slate-950/70 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-800 bg-[#030712]/80 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-10 py-5">
 
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-blue-500">
-          SV
-        </h1>
 
-        {/* Navigation Menu */}
-        <ul className="hidden gap-10 text-gray-300 md:flex">
+        <Link
+          href="/"
+          className="text-5xl font-black tracking-tight bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 bg-clip-text text-transparent"
+        >
+          Venkatadri
+        </Link>
 
-          <li>
-            <a href="#home" className="cursor-pointer hover:text-blue-400">
-              Home
+        {/* Navigation */}
+
+        <nav className="hidden lg:flex items-center gap-12">
+
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="group relative text-lg font-medium text-gray-300 transition hover:text-white"
+            >
+              {item.name}
+
+              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+
             </a>
-          </li>
+          ))}
 
-          <li>
-            <a href="#about" className="cursor-pointer hover:text-blue-400">
-              About
-            </a>
-          </li>
-
-          <li>
-            <a href="#experience" className="cursor-pointer hover:text-blue-400">
-              Experience
-            </a>
-          </li>
-
-          <li>
-            <a href="#projects" className="cursor-pointer hover:text-blue-400">
-              Projects
-            </a>
-          </li>
-
-          <li>
-            <a href="#contact" className="cursor-pointer hover:text-blue-400">
-              Contact
-            </a>
-          </li>
-
-        </ul>
-
-        {/* Resume Button */}
-        <button className="rounded-lg bg-blue-600 px-5 py-2 font-semibold text-white hover:bg-blue-700 transition">
-          Resume
-        </button>
+        </nav>
 
       </div>
-    </nav>
+    </header>
   );
 }

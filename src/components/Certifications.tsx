@@ -3,6 +3,10 @@ export default function Certifications() {
     "AWS Certified Cloud Practitioner",
     "Google AI Essentials",
     "IBM Generative AI Essentials",
+    "Microsoft Azure Administrator AZ-104",
+    "Microsoft Azure Fundamentals AZ-900",
+    "DeepLearning.AI Prompt Engineering for Developers",
+    "Machine Learning using Python",
   ];
 
   return (
